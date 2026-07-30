@@ -1,0 +1,85 @@
+---
+/**
+ * Base layout component for Lime Brothers Co website.
+ * Provides SEO metadata, global styles, and semantic page structure.
+ */
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  image?: string;
+}
+
+const {
+  title,
+  description,
+  canonical = Astro.url.href,
+  image = '/images/og-default.png',
+} = Astro.props;
+
+const siteTitle = `${title} | Lime Brothers Co`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{siteTitle}</title>
+
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={siteTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={image} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={siteTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+
+    <!-- Schema.org -->
+    <script
+      is:inline
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        name: 'Lime Brothers Co',
+        url: 'https://limebrothers.co',
+        description:
+          'Engineering Acceleration Company. Fractional CTO and AI Engineering services.',
+      })}
+    />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  @import '../styles/tokens.css';
+  @import '../styles/typography.css';
+  @import '../styles/globals.css';
+  @import '../styles/utilities.css';
+  @import '../styles/animations.css';
+</style>
