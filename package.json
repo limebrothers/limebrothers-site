@@ -6,10 +6,10 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build",
+    "build": "astro build",
+    "check": "astro check",
     "preview": "astro preview",
-    "astro": "astro",
-    "check": "astro check"
+    "astro": "astro"
   },
   "dependencies": {
     "astro": "^4.16.0",
