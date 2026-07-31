@@ -1,0 +1,30 @@
+---
+/**
+ * Card component for Lime Brothers Co website.
+ * A flexible container with rounded corners, soft shadow and generous padding.
+ */
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+---
+
+<article class={`card ${className}`.trim()}>
+  <slot />
+</article>
+
+<style>
+  .card {
+    background-color: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow var(--transition-fast);
+  }
+
+  .card:hover {
+    box-shadow: var(--shadow-md);
+  }
+</style>

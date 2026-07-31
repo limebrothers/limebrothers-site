@@ -189,6 +189,40 @@ Minimal borders.
 
 ---
 
+# Badges
+
+Small pill labels.
+
+Used for status, category or metadata.
+
+Variants: primary, dark, muted.
+
+---
+
+# Layout Primitives
+
+## Container
+
+Centers content with a max-width of 1280px.
+
+## Section
+
+Semantic page section with consistent vertical spacing (120px).
+
+---
+
+# Component Inventory
+
+| Component | Path | Purpose |
+|-----------|------|---------|
+| Button | `src/components/ui/Button.astro` | CTA and action triggers |
+| Card | `src/components/ui/Card.astro` | Content grouping |
+| Badge | `src/components/ui/Badge.astro` | Labels and metadata |
+| Container | `src/components/ui/Container.astro` | Max-width wrapper |
+| Section | `src/components/ui/Section.astro` | Vertical page section |
+
+---
+
 # Icons
 
 Bootstrap Icons.

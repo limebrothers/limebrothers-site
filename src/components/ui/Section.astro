@@ -1,0 +1,28 @@
+---
+/**
+ * Section component for Lime Brothers Co website.
+ * A semantic page section with consistent vertical spacing.
+ */
+
+interface Props {
+  as?: 'section' | 'div';
+  class?: string;
+  'aria-labelledby'?: string;
+}
+
+const {
+  as: Tag = 'section',
+  class: className = '',
+  'aria-labelledby': ariaLabelledBy,
+} = Astro.props;
+---
+
+<Tag class={`section ${className}`.trim()} aria-labelledby={ariaLabelledBy}>
+  <slot />
+</Tag>
+
+<style>
+  .section {
+    padding-block: var(--section-spacing);
+  }
+</style>

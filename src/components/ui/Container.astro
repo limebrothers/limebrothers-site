@@ -1,0 +1,25 @@
+---
+/**
+ * Container component for Lime Brothers Co website.
+ * Centers content horizontally with a max-width and side padding.
+ */
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+---
+
+<div class={`container ${className}`.trim()}>
+  <slot />
+</div>
+
+<style>
+  .container {
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin-inline: auto;
+    padding-inline: var(--space-lg);
+  }
+</style>

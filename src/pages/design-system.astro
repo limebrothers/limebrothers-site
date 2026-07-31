@@ -1,0 +1,89 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Container from '@components/ui/Container.astro';
+import Section from '@components/ui/Section.astro';
+import Button from '@components/ui/Button.astro';
+import Card from '@components/ui/Card.astro';
+import Badge from '@components/ui/Badge.astro';
+---
+
+<Layout
+  title="Design System"
+  description="Visual reference for the Lime Brothers Co design system components and tokens."
+>
+  <main>
+    <Section aria-labelledby="design-system-title">
+      <Container>
+        <h1 id="design-system-title">Design System</h1>
+        <p class="text-muted">
+          Reference page for reusable UI components and design tokens.
+        </p>
+      </Container>
+    </Section>
+
+    <Section aria-labelledby="typography-title">
+      <Container>
+        <h2 id="typography-title">Typography</h2>
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <p>
+          Body text. Lime Brothers Co is an Engineering Acceleration Company
+          helping technology organizations scale through fractional CTO
+          leadership and pragmatic AI adoption.
+        </p>
+        <p class="text-muted">Muted text for supporting information.</p>
+      </Container>
+    </Section>
+
+    <Section aria-labelledby="buttons-title">
+      <Container>
+        <h2 id="buttons-title">Buttons</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center;">
+          <Button>Primary</Button>
+          <Button variant="secondary">Secondary</Button>
+          <Button variant="ghost">Ghost</Button>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-top: 1rem;">
+          <Button size="sm">Small</Button>
+          <Button size="md">Medium</Button>
+          <Button size="lg">Large</Button>
+        </div>
+      </Container>
+    </Section>
+
+    <Section aria-labelledby="badges-title">
+      <Container>
+        <h2 id="badges-title">Badges</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+          <Badge variant="primary">Primary</Badge>
+          <Badge variant="dark">Dark</Badge>
+          <Badge variant="muted">Muted</Badge>
+        </div>
+      </Container>
+    </Section>
+
+    <Section aria-labelledby="cards-title">
+      <Container>
+        <h2 id="cards-title">Cards</h2>
+        <div style="display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+          <Card>
+            <h3>Card Title</h3>
+            <p>
+              Cards use rounded corners, soft shadows and generous spacing to
+              group related content.
+            </p>
+          </Card>
+          <Card>
+            <h3>Another Card</h3>
+            <p>
+              Composition over duplication. Every component should have a single
+              responsibility.
+            </p>
+          </Card>
+        </div>
+      </Container>
+    </Section>
+  </main>
+</Layout>
