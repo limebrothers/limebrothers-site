@@ -1,110 +1,32 @@
 # Product Roadmap
 
-## Vision
+## Q3 2026
 
-Build a premium website that becomes the main business acquisition channel for Lime Brothers Co.
+### Sprint 1 — Foundation
+✅ F-001: Project Setup
 
----
+### Sprint 2 — Design System
+✅ F-002: Design System
 
-# Phase 1
+### Sprint 3 — Homepage
+✅ F-003: Hero Section
+⬜ F-004: Services Section
+⬜ F-005: Methodology Section
+⬜ F-006: Team Section
+⬜ F-007: Case Studies / Clients
+⬜ F-008: Contact / CTA Section
 
-Foundation
-
-- [ ] Project initialization
-- [ ] Design System
-- [ ] Main Layout
-- [ ] Responsive Navigation
-- [ ] Footer
-- [ ] Theme
-
----
-
-# Phase 2
-
-Landing Page
-
-- [ ] Hero
-- [ ] Challenges
-- [ ] Solutions
-- [ ] Philosophy
-- [ ] Call to Action
+### Sprint 4 — Navigation & Layout
+⬜ F-009: Navigation Header
+⬜ F-010: Footer
 
 ---
 
-# Phase 3
+## Q4 2026
 
-Solutions
+### Sprint 5 — Content
+⬜ F-011: Blog / Insights
 
-- [ ] CTO as a Service
-- [ ] AI Engineering Accelerator
-
----
-
-# Phase 4
-
-Company
-
-- [ ] About
-- [ ] Manifesto
-- [ ] Contact
-
----
-
-# Phase 5
-
-Content
-
-- [ ] Blog
-- [ ] Articles
-- [ ] Technical Publications
-
----
-
-# Phase 6
-
-SEO
-
-- [ ] Sitemap
-- [ ] Robots
-- [ ] OpenGraph
-- [ ] Structured Data
-
----
-
-# Phase 7
-
-Performance
-
-- [ ] Lighthouse > 95
-- [ ] Accessibility
-- [ ] Performance optimization
-- [ ] Image optimization
-
----
-
-# Phase 8
-
-Production
-
-- [ ] Domain
-- [ ] Cloudflare
-- [ ] Analytics
-- [ ] Monitoring
-
----
-
-# Future Ideas
-
-- Workshops
-- Engineering Playbooks
-- White Papers
-- Download Center
-- Newsletter
-- Customer Portal
-- Developer Portal
-
----
-
-# Long-term Goal
-
-Position Lime Brothers Co as a recognized Engineering Acceleration Company through high-quality technical content, premium user experience and clear communication of its expertise.
+### Sprint 6 — Optimization
+⬜ F-012: Performance & Accessibility Audit
+⬜ Analytics & SEO tuning

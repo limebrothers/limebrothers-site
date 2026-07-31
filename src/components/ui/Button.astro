@@ -1,0 +1,105 @@
+---
+/**
+ * Button component for Lime Brothers Co website.
+ * Supports multiple variants, sizes and rendering as anchor or button.
+ */
+
+interface Props {
+  variant?: 'primary' | 'secondary' | 'ghost';
+  size?: 'sm' | 'md' | 'lg';
+  href?: string;
+  type?: 'button' | 'submit' | 'reset';
+  class?: string;
+}
+
+const {
+  variant = 'primary',
+  size = 'md',
+  href,
+  type = 'button',
+  class: className = '',
+} = Astro.props;
+
+const tag = href ? 'a' : 'button';
+const baseClass = `btn btn--${variant} btn--${size} ${className}`.trim();
+---
+
+<tag class={baseClass} href={href} type={href ? undefined : type}>
+  <slot />
+</tag>
+
+<style>
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xs);
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-small);
+    line-height: 1;
+    text-decoration: none;
+    border: 2px solid transparent;
+    border-radius: var(--radius-pill);
+    cursor: pointer;
+    transition:
+      background-color var(--transition-fast),
+      border-color var(--transition-fast),
+      color var(--transition-fast),
+      transform var(--transition-fast);
+  }
+
+  .btn:hover,
+  .btn:focus {
+    transform: translateY(-1px);
+  }
+
+  /* Sizes */
+  .btn--sm {
+    padding: 0.625rem 1rem;
+  }
+
+  .btn--md {
+    padding: 0.875rem 1.5rem;
+  }
+
+  .btn--lg {
+    padding: 1rem 2rem;
+    font-size: var(--font-size-body);
+  }
+
+  /* Variants */
+  .btn--primary {
+    background-color: var(--color-primary);
+    color: var(--color-dark);
+    border-color: var(--color-primary);
+  }
+
+  .btn--primary:hover,
+  .btn--primary:focus {
+    background-color: var(--color-primary-hover);
+    border-color: var(--color-primary-hover);
+  }
+
+  .btn--secondary {
+    background-color: transparent;
+    color: var(--color-dark);
+    border-color: var(--color-dark);
+  }
+
+  .btn--secondary:hover,
+  .btn--secondary:focus {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+  }
+
+  .btn--ghost {
+    background-color: transparent;
+    color: var(--color-dark);
+    border-color: transparent;
+  }
+
+  .btn--ghost:hover,
+  .btn--ghost:focus {
+    background-color: rgba(17, 17, 17, 0.04);
+  }
+</style>

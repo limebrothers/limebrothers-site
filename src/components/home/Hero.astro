@@ -1,0 +1,107 @@
+---
+/**
+ * Hero section for the Lime Brothers Co homepage.
+ * Communicates the Engineering Acceleration Company positioning
+ * and provides clear calls to action.
+ */
+
+import Container from '@components/ui/Container.astro';
+import Button from '@components/ui/Button.astro';
+import Badge from '@components/ui/Badge.astro';
+
+interface Props {
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  primaryCta?: {
+    label: string;
+    href: string;
+  };
+  secondaryCta?: {
+    label: string;
+    href: string;
+  };
+}
+
+const {
+  eyebrow = 'Engineering Acceleration Company',
+  title = 'Accelerating Engineering. Empowering Business.',
+  description = 'We help technology organizations scale through fractional CTO leadership, pragmatic AI adoption, and high-performing engineering teams.',
+  primaryCta = { label: 'Explore Services', href: '/services' },
+  secondaryCta = { label: 'How We Work', href: '/how-we-work' },
+} = Astro.props;
+---
+
+<section class="hero" aria-labelledby="hero-title">
+  <Container>
+    <div class="hero__content">
+      <div class="hero__eyebrow">
+        <Badge variant="primary">{eyebrow}</Badge>
+      </div>
+      <h1 id="hero-title" class="hero__title">{title}</h1>
+      <p class="hero__description">{description}</p>
+      <div class="hero__actions">
+        <Button href={primaryCta.href} size="lg">{primaryCta.label}</Button>
+        <Button href={secondaryCta.href} variant="secondary" size="lg">
+          {secondaryCta.label}
+        </Button>
+      </div>
+    </div>
+  </Container>
+</section>
+
+<style>
+  .hero {
+    padding-block: calc(var(--section-spacing) * 1.25);
+    background-color: var(--color-white);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 56rem;
+  }
+
+  .hero__eyebrow {
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero__title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: var(--font-weight-extrabold);
+    line-height: var(--line-height-tight);
+    letter-spacing: -0.03em;
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero__description {
+    font-size: clamp(var(--font-size-body), 2vw, 1.375rem);
+    color: var(--color-text-muted);
+    line-height: var(--line-height-relaxed);
+    max-width: 44rem;
+    margin-bottom: var(--space-xl);
+  }
+
+  .hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      padding-block: var(--space-3xl);
+    }
+
+    .hero__actions {
+      width: 100%;
+    }
+
+    .hero__actions :global(.btn) {
+      width: 100%;
+    }
+  }
+</style>
