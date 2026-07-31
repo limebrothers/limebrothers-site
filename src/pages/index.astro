@@ -1,20 +1,21 @@
 ---
 import Layout from '@layouts/Layout.astro';
+import Hero from '@components/home/Hero.astro';
 ---
 
 <Layout
   title="Engineering Acceleration Company"
   description="Lime Brothers Co helps engineering teams move faster with fractional CTO leadership and AI engineering acceleration."
 >
-  <main class="container">
-    <section class="section" aria-labelledby="hero-title">
-      <h1 id="hero-title">Accelerating Engineering. Empowering Business.</h1>
+  <main>
+    <Hero />
+
+    <section class="container section" aria-labelledby=" placeholder-title">
+      <h2 id="placeholder-title">More coming soon</h2>
       <p class="text-muted">
-        Lime Brothers Co is an Engineering Acceleration Company. We help
-        technology organizations scale through fractional CTO leadership and
-        pragmatic AI adoption.
+        This site is being built incrementally. Next features: Services,
+        Methodology, Team, and Contact sections.
       </p>
-      <p><em>Coming soon.</em></p>
     </section>
   </main>
 </Layout>
