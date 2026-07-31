@@ -1,4 +1,4 @@
-    # Changelog
+# Changelog
 
 All notable changes to this project will be documented in this file.
 
@@ -10,11 +10,18 @@ The format is based on Keep a Changelog and this project follows Semantic Versio
 
 ### Added
 
-- Initial project documentation
-- AI development guidelines
-- Architecture documentation
-- Design System documentation
-- Product roadmap
+- Hero section component on homepage with primary and secondary CTAs
+- Reusable UI components: Button, Card, Badge, Container, Section
+- Design system showcase page at `/design-system`
+- Astro project initialization
+- TypeScript strict configuration
+- Base layout component with SEO metadata
+- Homepage placeholder page
+- Custom CSS design tokens aligned with Design System
+- Global styles and reset
+- Utility classes
+- Subtle animation utilities
+- Project scaffolding matching documented architecture
 
 ---
 
@@ -22,15 +29,8 @@ The format is based on Keep a Changelog and this project follows Semantic Versio
 
 ### Added
 
-- Astro project initialization
-- Project documentation
-- Repository structure
-- Engineering standards
-
-### Planned
-
-- Landing Page
-- Design System
-- Responsive Navigation
-- Dark Mode
-- Solutions Pages
+- Initial project documentation
+- AI development guidelines
+- Architecture documentation
+- Design System documentation
+- Product roadmap
