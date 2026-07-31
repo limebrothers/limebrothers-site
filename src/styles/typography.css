@@ -1,0 +1,72 @@
+/*
+ * Typography styles for Lime Brothers Co website.
+ * Uses design tokens from tokens.css.
+ */
+
+html {
+  font-family: var(--font-sans);
+  font-size: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-normal);
+  color: var(--color-text);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--color-text);
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+}
+
+h4 {
+  font-size: var(--font-size-h4);
+}
+
+p {
+  margin: 0 0 var(--space-md) 0;
+  line-height: var(--line-height-relaxed);
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.125rem;
+  transition: color var(--transition-fast);
+}
+
+a:hover,
+a:focus {
+  color: var(--color-primary-hover);
+}
+
+small,
+.text-small {
+  font-size: var(--font-size-small);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
