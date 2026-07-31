@@ -1,0 +1,154 @@
+---
+/**
+ * Services section for the Lime Brothers Co homepage.
+ * Presents the three core service offerings.
+ */
+
+import Section from '@components/ui/Section.astro';
+import Container from '@components/ui/Container.astro';
+import Card from '@components/ui/Card.astro';
+import Button from '@components/ui/Button.astro';
+import Badge from '@components/ui/Badge.astro';
+
+interface Service {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+const eyebrow = 'Our Services';
+const title = 'Built to accelerate technology organizations';
+const description =
+  'From strategic leadership to hands-on engineering, we help companies ship faster, reduce risk and unlock growth.';
+
+const services: Service[] = [
+  {
+    icon: 'bi bi-briefcase',
+    title: 'Fractional CTO',
+    description:
+      'Experienced technology leadership without the full-time cost. We define architecture, hire teams and align technology with business goals.',
+  },
+  {
+    icon: 'bi bi-cpu',
+    title: 'AI Engineering Acceleration',
+    description:
+      'Pragmatic AI adoption that delivers measurable outcomes. We identify high-impact use cases, prototype fast and integrate responsibly.',
+  },
+  {
+    icon: 'bi bi-people',
+    title: 'Leadership & Culture',
+    description:
+      'Build high-performing, autonomous engineering teams. We design processes, rituals and culture that attract and retain top talent.',
+  },
+];
+---
+
+<Section class="services" aria-labelledby="services-title">
+  <Container>
+    <div class="services__header">
+      <Badge variant="dark">{eyebrow}</Badge>
+      <h2 id="services-title" class="services__title">{title}</h2>
+      <p class="services__description">{description}</p>
+    </div>
+
+    <div class="services__grid">
+      {
+        services.map((service) => (
+          <Card class="service-card">
+            <div class="service-card__icon" aria-hidden="true">
+              <i class={service.icon} />
+            </div>
+            <h3 class="service-card__title">{service.title}</h3>
+            <p class="service-card__description">{service.description}</p>
+          </Card>
+        ))
+      }
+    </div>
+
+    <div class="services__actions">
+      <Button href="/services" size="lg">Explore all services</Button>
+      <Button href="/how-we-work" variant="secondary" size="lg">
+        How we work
+      </Button>
+    </div>
+  </Container>
+</Section>
+
+<style>
+  .services {
+    background-color: var(--color-surface);
+  }
+
+  .services__header {
+    max-width: 44rem;
+    margin-bottom: var(--space-2xl);
+  }
+
+  .services__title {
+    margin-top: var(--space-md);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: var(--font-weight-extrabold);
+    line-height: var(--line-height-tight);
+    letter-spacing: -0.02em;
+  }
+
+  .services__description {
+    margin-top: var(--space-md);
+    color: var(--color-text-muted);
+    font-size: clamp(var(--font-size-body), 2vw, 1.25rem);
+    line-height: var(--line-height-relaxed);
+  }
+
+  .services__grid {
+    display: grid;
+    gap: var(--space-xl);
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  }
+
+  .service-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .service-card__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-bottom: var(--space-lg);
+    background-color: var(--color-primary);
+    color: var(--color-dark);
+    border-radius: var(--radius-md);
+    font-size: 1.5rem;
+  }
+
+  .service-card__title {
+    font-size: var(--font-size-h4);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--space-sm);
+  }
+
+  .service-card__description {
+    color: var(--color-text-muted);
+    line-height: var(--line-height-relaxed);
+    margin: 0;
+  }
+
+  .services__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    margin-top: var(--space-2xl);
+  }
+
+  @media (max-width: 768px) {
+    .services__actions {
+      width: 100%;
+    }
+
+    .services__actions :global(.btn) {
+      width: 100%;
+    }
+  }
+</style>

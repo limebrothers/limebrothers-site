@@ -24,6 +24,14 @@ This document tracks implemented and planned features for the Lime Brothers Co w
 - Primary and secondary CTAs
 - Responsive typography and layout
 - Uses design-system components
+- Vite aliases configured for TypeScript path mapping
+- `npm run build` verified
+
+### F-004: Services Section
+- Services section on homepage
+- Service cards with Bootstrap Icons
+- Responsive grid layout
+- CTA to dedicated services page
 - `npm run build` verified
 
 ---
@@ -35,9 +43,6 @@ _None._
 ---
 
 ## Backlog
-
-### F-004: Services Section
-Showcase fractional CTO and AI engineering acceleration services.
 
 ### F-005: Methodology Section
 Describe the Lime Brothers operating model and engagement process.
