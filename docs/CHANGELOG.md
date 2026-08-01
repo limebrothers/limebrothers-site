@@ -10,6 +10,7 @@ The format is based on Keep a Changelog and this project follows Semantic Versio
 
 ### Added
 
+- Methodology section on the homepage with four-step engagement process: Diagnose, Align, Accelerate, Scale
 - Services section on the homepage with Fractional CTO, AI Engineering Acceleration and Leadership & Culture cards
 - Hero section component on homepage with primary and secondary CTAs
 - Reusable UI components: Button, Card, Badge, Container, Section

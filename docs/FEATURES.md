@@ -34,6 +34,14 @@ This document tracks implemented and planned features for the Lime Brothers Co w
 - CTA to dedicated services page
 - `npm run build` verified
 
+### F-005: Methodology Section
+- Four-step process: Diagnose, Align, Accelerate, Scale
+- Dark-background section for visual contrast after Services
+- Responsive grid layout (4 columns → 1 column on mobile)
+- Semantic `<ol>` for ordered process steps
+- Uses design-system `Section`, `Container`, `Badge` components
+- `npm run build` verified
+
 ---
 
 ## In Progress
@@ -43,9 +51,6 @@ _None._
 ---
 
 ## Backlog
-
-### F-005: Methodology Section
-Describe the Lime Brothers operating model and engagement process.
 
 ### F-006: Team Section
 Highlight key people and experience.

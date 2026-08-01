@@ -1,0 +1,155 @@
+---
+/**
+ * Methodology section for the Lime Brothers Co homepage.
+ * Presents the four-step operating model and engagement process.
+ *
+ * Steps: Diagnose → Align → Accelerate → Scale
+ */
+
+import Section from '@components/ui/Section.astro';
+import Container from '@components/ui/Container.astro';
+import Badge from '@components/ui/Badge.astro';
+
+interface Step {
+  step: string;
+  title: string;
+  description: string;
+}
+
+const eyebrow = 'Our Methodology';
+const title = 'A structured approach to engineering acceleration';
+const description =
+  'We combine leadership, data-driven diagnosis and execution discipline to deliver outcomes that last beyond our engagement.';
+
+const steps: Step[] = [
+  {
+    step: '01',
+    title: 'Diagnose',
+    description:
+      'Understand your current engineering reality: architecture, team dynamics, delivery flow and business constraints. We identify bottlenecks and the highest-leverage opportunities.',
+  },
+  {
+    step: '02',
+    title: 'Align',
+    description:
+      'Translate technical findings into a shared roadmap with clear outcomes, metrics and ownership. Alignment between engineering and business is the foundation for velocity.',
+  },
+  {
+    step: '03',
+    title: 'Accelerate',
+    description:
+      'Implement targeted improvements in technology, processes and people. We ship small, measure impact and iterate rapidly without disrupting the business.',
+  },
+  {
+    step: '04',
+    title: 'Scale',
+    description:
+      'Embed the capabilities needed for sustained growth. We mentor leaders, document decisions and leave your organization stronger than we found it.',
+  },
+];
+---
+
+<Section class="methodology" aria-labelledby="methodology-title">
+  <Container>
+    <div class="methodology__header">
+      <Badge variant="dark">{eyebrow}</Badge>
+      <h2 id="methodology-title" class="methodology__title">{title}</h2>
+      <p class="methodology__description">{description}</p>
+    </div>
+
+    <ol class="methodology__steps" role="list">
+      {
+        steps.map((step) => (
+          <li class="methodology__step">
+            <span class="methodology__step-number" aria-hidden="true">
+              {step.step}
+            </span>
+            <div class="methodology__step-body">
+              <h3 class="methodology__step-title">{step.title}</h3>
+              <p class="methodology__step-description">{step.description}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </Container>
+</Section>
+
+<style>
+  .methodology {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+  }
+
+  .methodology__header {
+    max-width: 44rem;
+    margin-bottom: var(--space-2xl);
+  }
+
+  .methodology__title {
+    margin-top: var(--space-md);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: var(--font-weight-extrabold);
+    line-height: var(--line-height-tight);
+    letter-spacing: -0.02em;
+    color: var(--color-white);
+  }
+
+  .methodology__description {
+    margin-top: var(--space-md);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: clamp(var(--font-size-body), 2vw, 1.25rem);
+    line-height: var(--line-height-relaxed);
+  }
+
+  .methodology__steps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: var(--space-xl);
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  }
+
+  .methodology__step {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    padding: var(--space-xl);
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-lg);
+    transition: border-color var(--transition-fast), background-color var(--transition-fast);
+  }
+
+  .methodology__step:hover {
+    background-color: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.14);
+  }
+
+  .methodology__step-number {
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 0.08em;
+    color: var(--color-primary);
+  }
+
+  .methodology__step-title {
+    font-size: var(--font-size-h4);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-white);
+    margin: 0;
+  }
+
+  .methodology__step-description {
+    color: rgba(255, 255, 255, 0.6);
+    line-height: var(--line-height-relaxed);
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .methodology__steps {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
