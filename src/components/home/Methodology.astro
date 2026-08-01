@@ -77,8 +77,8 @@ const steps: Step[] = [
 
 <style>
   .methodology {
-    background-color: var(--color-white);
-    color: var(--color-text);
+    background-color: var(--color-dark);
+    color: var(--color-white);
   }
 
   .methodology__header {
@@ -92,12 +92,12 @@ const steps: Step[] = [
     font-weight: var(--font-weight-extrabold);
     line-height: var(--line-height-tight);
     letter-spacing: -0.02em;
-    color: var(--color-text);
+    color: var(--color-white);
   }
 
   .methodology__description {
     margin-top: var(--space-md);
-    color: var(--color-text-muted);
+    color: rgba(255, 255, 255, 0.6);
     font-size: clamp(var(--font-size-body), 2vw, 1.25rem);
     line-height: var(--line-height-relaxed);
   }
@@ -116,33 +116,33 @@ const steps: Step[] = [
     flex-direction: column;
     gap: var(--space-md);
     padding: var(--space-xl);
-    background-color: var(--color-surface);
-    border: 1px solid rgba(17, 17, 17, 0.08);
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: var(--radius-lg);
     transition: border-color var(--transition-fast), background-color var(--transition-fast);
   }
 
   .methodology__step:hover {
-    background-color: #f1f3f6;
-    border-color: rgba(17, 17, 17, 0.14);
+    background-color: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.14);
   }
 
   .methodology__step-number {
     font-size: var(--font-size-small);
     font-weight: var(--font-weight-bold);
     letter-spacing: 0.08em;
-    color: var(--color-dark);
+    color: var(--color-primary);
   }
 
   .methodology__step-title {
     font-size: var(--font-size-h4);
     font-weight: var(--font-weight-bold);
-    color: var(--color-text);
+    color: var(--color-white);
     margin: 0;
   }
 
   .methodology__step-description {
-    color: var(--color-text-muted);
+    color: rgba(255, 255, 255, 0.6);
     line-height: var(--line-height-relaxed);
     margin: 0;
   }

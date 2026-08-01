@@ -35,10 +35,11 @@ This document tracks implemented and planned features for the Lime Brothers Co w
 - `npm run build` verified
 
 ### F-005: Methodology Section
-- Methodology section on homepage
 - Four-step process: Diagnose, Align, Accelerate, Scale
-- Uses existing `Section`, `Container`, `Card` and `Badge` components
-- Semantic ordered list for the process steps
+- Dark-background section for visual contrast after Services
+- Responsive grid layout (4 columns → 1 column on mobile)
+- Semantic `<ol>` for ordered process steps
+- Uses design-system `Section`, `Container`, `Badge` components
 - `npm run build` verified
 
 ---
