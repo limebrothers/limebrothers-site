@@ -12,7 +12,7 @@
 ✅ F-003: Hero Section
 ✅ F-004: Services Section
 ✅ F-005: Methodology Section
-⬜ F-006: Team Section
+✅ F-006: Team Section
 ⬜ F-007: Case Studies / Clients
 ⬜ F-008: Contact / CTA Section
 

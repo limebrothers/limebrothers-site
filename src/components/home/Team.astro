@@ -1,0 +1,201 @@
+---
+/**
+ * Team section for the Lime Brothers Co homepage.
+ * Introduces the leadership behind the company, reinforcing credibility,
+ * technical trust and engineering excellence.
+ *
+ * Displays role-based profile cards when individual bios are unavailable.
+ */
+
+import Section from '@components/ui/Section.astro';
+import Container from '@components/ui/Container.astro';
+import Badge from '@components/ui/Badge.astro';
+
+interface TeamMember {
+  role: string;
+  name: string;
+  bio: string;
+  tags: string[];
+  icon: string;
+}
+
+const eyebrow = 'The Team';
+const title = 'Engineering leaders who have been in the arena';
+const description =
+  'We are practitioners first. Every engagement is led by people who have shipped products, scaled teams and navigated the hard decisions that come with growth.';
+
+const members: TeamMember[] = [
+  {
+    name: 'Technology Strategy',
+    role: 'Fractional CTO',
+    bio: 'Fifteen-plus years turning engineering bottlenecks into growth levers. Architects systems, builds teams and translates technology risk into business outcomes for Series A to Series C companies.',
+    tags: ['Architecture', 'Hiring', 'Roadmaps'],
+    icon: 'bi bi-person-workspace',
+  },
+  {
+    name: 'AI Engineering',
+    role: 'AI Acceleration Lead',
+    bio: 'Hands-on builder with deep experience in LLM integration, prompt engineering and AI governance. Ships production AI systems and trains engineering teams to sustain them independently.',
+    tags: ['LLM Integration', 'AI Governance', 'Developer Enablement'],
+    icon: 'bi bi-cpu',
+  },
+  {
+    name: 'Delivery Excellence',
+    role: 'Engineering Lead',
+    bio: 'Delivery-focused engineer who brings structure without bureaucracy. Designs team rituals, CI/CD pipelines and engineering culture that let organisations move fast with confidence.',
+    tags: ['CI/CD', 'Team Design', 'Engineering Culture'],
+    icon: 'bi bi-people',
+  },
+];
+---
+
+<Section class="team" aria-labelledby="team-title">
+  <Container>
+    <div class="team__header">
+      <Badge variant="dark">{eyebrow}</Badge>
+      <h2 id="team-title" class="team__title">{title}</h2>
+      <p class="team__description">{description}</p>
+    </div>
+
+    <ul class="team__grid" role="list">
+      {
+        members.map((member) => (
+          <li class="team__card">
+            <div class="team__card-icon" aria-hidden="true">
+              <i class={member.icon} />
+            </div>
+            <div class="team__card-body">
+              <p class="team__card-role">{member.role}</p>
+              <h3 class="team__card-name">{member.name}</h3>
+              <p class="team__card-bio">{member.bio}</p>
+              <ul class="team__card-tags" role="list" aria-label="Areas of expertise">
+                {member.tags.map((tag) => (
+                  <li class="team__card-tag">{tag}</li>
+                ))}
+              </ul>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </Container>
+</Section>
+
+<style>
+  .team {
+    background-color: var(--color-surface);
+  }
+
+  .team__header {
+    max-width: 44rem;
+    margin-bottom: var(--space-2xl);
+  }
+
+  .team__title {
+    margin-top: var(--space-md);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: var(--font-weight-extrabold);
+    line-height: var(--line-height-tight);
+    letter-spacing: -0.02em;
+    color: var(--color-text);
+  }
+
+  .team__description {
+    margin-top: var(--space-md);
+    color: var(--color-text-muted);
+    font-size: clamp(var(--font-size-body), 2vw, 1.25rem);
+    line-height: var(--line-height-relaxed);
+  }
+
+  .team__grid {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: var(--space-xl);
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  }
+
+  .team__card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    padding: var(--space-xl);
+    background-color: var(--color-white);
+    border: 1px solid rgba(17, 17, 17, 0.08);
+    border-radius: var(--radius-lg);
+    transition: border-color var(--transition-fast), background-color var(--transition-fast);
+  }
+
+  .team__card:hover {
+    background-color: #f9fafb;
+    border-color: rgba(17, 17, 17, 0.14);
+  }
+
+  .team__card-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: var(--color-primary);
+    color: var(--color-dark);
+    border-radius: var(--radius-md);
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .team__card-body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .team__card-role {
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-primary-dark, var(--color-dark));
+    margin: 0;
+  }
+
+  .team__card-name {
+    font-size: var(--font-size-h4);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text);
+    margin: 0;
+  }
+
+  .team__card-bio {
+    color: var(--color-text-muted);
+    line-height: var(--line-height-relaxed);
+    margin: 0;
+  }
+
+  .team__card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    list-style: none;
+    padding: 0;
+    margin: var(--space-sm) 0 0;
+  }
+
+  .team__card-tag {
+    display: inline-block;
+    padding: 0.25rem 0.625rem;
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text);
+    background-color: var(--color-surface);
+    border: 1px solid rgba(17, 17, 17, 0.1);
+    border-radius: var(--radius-full, 9999px);
+  }
+
+  @media (max-width: 768px) {
+    .team__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
