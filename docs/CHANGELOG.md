@@ -10,6 +10,7 @@ The format is based on Keep a Changelog and this project follows Semantic Versio
 
 ### Added
 
+- Team section on the homepage with three role-based profile cards (Fractional CTO, AI Acceleration Lead, Delivery Excellence) and expertise tag pills
 - Methodology section on the homepage with four-step engagement process: Diagnose, Align, Accelerate, Scale
 - Services section on the homepage with Fractional CTO, AI Engineering Acceleration and Leadership & Culture cards
 

@@ -42,6 +42,14 @@ This document tracks implemented and planned features for the Lime Brothers Co w
 - Uses design-system `Section`, `Container`, `Badge` components
 - `npm run build` verified
 
+### F-006: Team Section
+- Three role-based profile cards: Fractional CTO, AI Acceleration Lead, Delivery Excellence
+- Expertise tag pills per card for scannable credibility signals
+- Responsive grid layout (3 columns → 1 column on mobile)
+- Semantic `<ul>` with `role="list"` for team member cards
+- Uses design-system `Section`, `Container`, `Badge` components
+- `npm run build` verified
+
 ---
 
 ## In Progress
@@ -51,9 +59,6 @@ _None._
 ---
 
 ## Backlog
-
-### F-006: Team Section
-Highlight key people and experience.
 
 ### F-007: Case Studies / Clients
 Logos, testimonials or case-study excerpts.
