@@ -1,0 +1,96 @@
+---
+/**
+ * Company logo for Lime Brothers Co.
+ * Renders the brand wordmark from src/assets/logo.png.
+ *
+ * Inputs:
+ * - href: optional link target (defaults to home)
+ * - size: visual scale (sm | md | lg)
+ * - class: extra class names
+ *
+ * Usage:
+ * <Logo />
+ * <Logo size="sm" href="/" />
+ */
+
+import { Image } from 'astro:assets';
+import logo from '@assets/logo.png';
+
+interface Props {
+  href?: string | null;
+  size?: 'sm' | 'md' | 'lg';
+  class?: string;
+}
+
+const {
+  href = '/',
+  size = 'md',
+  class: className = '',
+} = Astro.props;
+
+const heights = {
+  sm: 28,
+  md: 36,
+  lg: 48,
+} as const;
+
+const height = heights[size];
+const width = Math.round((logo.width / logo.height) * height);
+const classes = `logo logo--${size} ${className}`.trim();
+---
+
+{
+  href ? (
+    <a class={classes} href={href} aria-label="Lime Brothers Co home">
+      <Image
+        src={logo}
+        alt="Lime Brothers Co"
+        width={width}
+        height={height}
+        densities={[1, 2]}
+        loading="eager"
+        decoding="async"
+      />
+    </a>
+  ) : (
+    <span class={classes}>
+      <Image
+        src={logo}
+        alt="Lime Brothers Co"
+        width={width}
+        height={height}
+        densities={[1, 2]}
+        loading="eager"
+        decoding="async"
+      />
+    </span>
+  )
+}
+
+<style>
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    line-height: 0;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  .logo :global(img) {
+    width: auto;
+    height: 100%;
+    max-height: inherit;
+  }
+
+  .logo--sm {
+    height: 1.75rem;
+  }
+
+  .logo--md {
+    height: 2.25rem;
+  }
+
+  .logo--lg {
+    height: 3rem;
+  }
+</style>

@@ -20,13 +20,13 @@ const {
   class: className = '',
 } = Astro.props;
 
-const tag = href ? 'a' : 'button';
+const Tag = href ? 'a' : 'button';
 const baseClass = `btn btn--${variant} btn--${size} ${className}`.trim();
 ---
 
-<tag class={baseClass} href={href} type={href ? undefined : type}>
+<Tag class={baseClass} href={href} type={href ? undefined : type}>
   <slot />
-</tag>
+</Tag>
 
 <style>
   .btn {

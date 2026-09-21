@@ -1,0 +1,118 @@
+---
+/**
+ * Site footer with company logo, navigation links and legal note.
+ */
+
+import Container from '@components/ui/Container.astro';
+import Logo from '@components/shared/Logo.astro';
+
+const year = new Date().getFullYear();
+
+const links = [
+  { label: 'Services', href: '/#services' },
+  { label: 'How We Work', href: '/#methodology' },
+  { label: 'Team', href: '/#team' },
+  { label: 'Contact', href: '/#contact' },
+] as const;
+---
+
+<footer class="footer">
+  <Container>
+    <div class="footer__top">
+      <div class="footer__brand">
+        <Logo size="sm" />
+        <p class="footer__tagline">
+          Engineering Acceleration Company. Fractional CTO leadership and AI
+          engineering services.
+        </p>
+      </div>
+
+      <nav class="footer__nav" aria-label="Footer">
+        <ul class="footer__list" role="list">
+          {
+            links.map((link) => (
+              <li>
+                <a class="footer__link" href={link.href}>
+                  {link.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copy">
+        © {year} Lime Brothers Co. All rights reserved.
+      </p>
+    </div>
+  </Container>
+</footer>
+
+<style>
+  .footer {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    padding-block: var(--space-3xl) var(--space-xl);
+  }
+
+  .footer__top {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+    margin-bottom: var(--space-2xl);
+  }
+
+  .footer__brand {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    max-width: 28rem;
+  }
+
+  .footer__tagline {
+    color: rgba(255, 255, 255, 0.72);
+    font-size: var(--font-size-small);
+    line-height: var(--line-height-relaxed);
+  }
+
+  .footer__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md) var(--space-lg);
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer__link {
+    color: rgba(255, 255, 255, 0.86);
+    text-decoration: none;
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-medium);
+    transition: color var(--transition-fast);
+  }
+
+  .footer__link:hover,
+  .footer__link:focus-visible {
+    color: var(--color-primary);
+  }
+
+  .footer__bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding-top: var(--space-lg);
+  }
+
+  .footer__copy {
+    color: rgba(255, 255, 255, 0.56);
+    font-size: 0.875rem;
+  }
+
+  @media (min-width: 768px) {
+    .footer__top {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  }
+</style>

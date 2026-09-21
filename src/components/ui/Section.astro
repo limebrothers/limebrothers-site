@@ -6,18 +6,20 @@
 
 interface Props {
   as?: 'section' | 'div';
+  id?: string;
   class?: string;
   'aria-labelledby'?: string;
 }
 
 const {
   as: Tag = 'section',
+  id,
   class: className = '',
   'aria-labelledby': ariaLabelledBy,
 } = Astro.props;
 ---
 
-<Tag class={`section ${className}`.trim()} aria-labelledby={ariaLabelledBy}>
+<Tag id={id} class={`section ${className}`.trim()} aria-labelledby={ariaLabelledBy}>
   <slot />
 </Tag>
 

@@ -50,6 +50,15 @@ This document tracks implemented and planned features for the Lime Brothers Co w
 - Uses design-system `Section`, `Container`, `Badge` components
 - `npm run build` verified
 
+### F-009: Navigation Header
+- Sticky responsive navbar with company logo (`src/assets/logo.png`)
+- Primary section links and CTA
+- Shared `Logo` component with size variants
+
+### F-010: Footer
+- Dark footer with company logo, tagline and navigation links
+- Organization schema includes logo URL
+
 ---
 
 ## In Progress
@@ -65,12 +74,6 @@ Logos, testimonials or case-study excerpts.
 
 ### F-008: Contact / CTA Section
 Contact form and final conversion call-to-action.
-
-### F-009: Navigation Header
-Sticky responsive navigation.
-
-### F-010: Footer
-Site footer with links and social metadata.
 
 ### F-011: Blog / Insights
 Content marketing article listing.

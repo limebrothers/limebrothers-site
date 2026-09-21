@@ -4,6 +4,10 @@
  * Provides SEO metadata, global styles, and semantic page structure.
  */
 
+import Navbar from '@components/layout/Navbar.astro';
+import Footer from '@components/layout/Footer.astro';
+import logo from '@assets/logo.png';
+
 interface Props {
   title: string;
   description: string;
@@ -19,6 +23,9 @@ const {
 } = Astro.props;
 
 const siteTitle = `${title} | Lime Brothers Co`;
+const siteUrl = Astro.site?.href ?? 'https://limebrothers.co/';
+const logoUrl = new URL(logo.src, siteUrl).href;
+const ogImage = image.startsWith('http') ? image : new URL(image, siteUrl).href;
 ---
 
 <!doctype html>
@@ -49,13 +56,14 @@ const siteTitle = `${title} | Lime Brothers Co`;
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
-    <meta property="og:image" content={image} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:logo" content={logoUrl} />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={siteTitle} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={image} />
+    <meta name="twitter:image" content={ogImage} />
 
     <!-- Schema.org -->
     <script
@@ -65,14 +73,18 @@ const siteTitle = `${title} | Lime Brothers Co`;
         '@context': 'https://schema.org',
         '@type': 'Organization',
         name: 'Lime Brothers Co',
-        url: 'https://limebrothers.co',
+        url: siteUrl,
+        logo: logoUrl,
+        image: logoUrl,
         description:
           'Engineering Acceleration Company. Fractional CTO and AI Engineering services.',
       })}
     />
   </head>
   <body>
+    <Navbar />
     <slot />
+    <Footer />
   </body>
 </html>
 

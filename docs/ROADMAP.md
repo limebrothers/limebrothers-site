@@ -17,8 +17,8 @@
 ⬜ F-008: Contact / CTA Section
 
 ### Sprint 4 — Navigation & Layout
-⬜ F-009: Navigation Header
-⬜ F-010: Footer
+✅ F-009: Navigation Header
+✅ F-010: Footer
 
 ---
 
